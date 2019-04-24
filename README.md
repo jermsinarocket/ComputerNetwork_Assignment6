@@ -1,14 +1,13 @@
 # CSED353 Computer Network Assignment 6 (Spring 2019, POSTECH)
 
 ## Language(s) used
-* Python
+* C++
 
 ## Development Environment
-* Python 3.6.7
-* Ubuntu 18.04.2
+* LIBpcap
 
 ## IDE(s) used
-* PyCharm
+* Visual Studio 2017
 
 ## Contributors
 * [Tan Wei Xuan](https://github.com/jermsinarocket)
