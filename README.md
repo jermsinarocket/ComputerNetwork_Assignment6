@@ -5,7 +5,7 @@
 
 ## Development Environment
 * LIBpcap
-* Wireshark
+* Wireshark 3.0.1
 
 ## IDE(s) used
 * Visual Studio 2017
