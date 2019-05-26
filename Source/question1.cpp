@@ -6,14 +6,13 @@
 char error_buffer[1000];
 
 int main(int argc, char *argv[]) {
-	// We will grab packets from here
+
 	char *device;
 	pcap_t *link;
 
 	// Capture timer
 	clock_t start, finish;
 
-	//Misc
 	const u_char *packet;
 	struct pcap_pkthdr header;
 	struct bpf_program fp;
@@ -25,7 +24,6 @@ int main(int argc, char *argv[]) {
 	pcap_dumper_t *dump_file;
 
 
-	// arg check
 	if(argc != 3) {
 		printf("Usage: ./program time filename\n");
 		printf("time: time to catch packets, in seconds\n");
@@ -54,7 +52,7 @@ int main(int argc, char *argv[]) {
 		exit(1);
 	}
 
-	// Create filters to capture TCP, UDP, and ICMP only
+	// Create filters to capture TCP, UDP, and ICMP traffic only
 	if(pcap_compile(link, &fp, filter_exp, 0, netp) == -1) {
 		printf("pcap_compile() failed.\n%s\n", pcap_geterr(link));
 		exit(1);
@@ -78,7 +76,7 @@ int main(int argc, char *argv[]) {
 		packet = pcap_next(link, &header);
 
 		if(packet == NULL) {
-			// Didn't get a packet yet
+			
 		}
 		else {
 			pcap_dump((u_char *)dump_file, &header, packet);
